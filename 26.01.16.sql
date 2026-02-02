@@ -1,4 +1,8 @@
-TRUNC(숫자,자릿수 N)-소수점 아래N까지 버림하여 표시
+ROUND(수,자릿수)-수를 지정된 자릿수까지 반올림,자릿수를 명시하지 않았을 경우 기본값은 0이며 반올림된 정수를 반환하고 음수일 경우 지정된 정수부를 반올림하여 반환
+CEIL(수)-소수점 이하의 수를 올림한 정수를 반환해 주는 함수
+FLOOR(수)-소수점 이하의 수를 버림한 정수를 반환해 주는 함수
+MOD(수1,수2)-수1을 수2로 나눈 나머지를 반환해주는 함수, 수2가 0일경우 수1을 반환
+TRUNC(숫자,자릿수)-소수점 아래N까지 버림하여 표시
 TRUNC(12.3456,3)-->12.345
 TRUNC(12.3456,0)-->12
 TRUNC(12.3456,-3)--->1000
@@ -11,7 +15,7 @@ SELECT TRUNC(PRICE,-4)AS PRICE_GROUP,
     GROUP BY TRUNC(PRICE,-4)
     ORDER BY 1;
 
-BETWEEN AND 
+BETWEEN A AND B
 예제)SELECT* FROM TEST WHERE AMY BETWEEN 1000 AND 3000 
 ->1000원~3000원 사이에 있는 값 조회 
 
@@ -26,4 +30,5 @@ SELECT USER_ID,PRODUCT_ID
     GROUP BY USER_ID
     HAVING COUNT(*)>=2
     ORDER BY USER_ID,PRODUCT_ID DESC;-->not a GROUP BY expression 오류 발생
+
 --> SELECT 절의 컬럼과 GROUP BY 절의 컬럼이 같지 않아서입니다
